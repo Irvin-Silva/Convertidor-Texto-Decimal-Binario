@@ -1,0 +1,100 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Vista;
+
+import javax.swing.JDialog;
+import javax.swing.JScrollPane;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
+/**
+ *
+ * @author irvin
+ */
+public class InfoBinarioDecimal extends JDialog 
+{
+    //Elementos de la ventana 
+    private VentanaPrincipalBinarioDecimal miVentanaPrincipal;
+    private ImageIcon iFondo;
+    
+    
+    //Metodo constructor de la ventana
+    public InfoBinarioDecimal (VentanaPrincipalBinarioDecimal vp)
+    {
+        super(vp,true);
+        miVentanaPrincipal=vp;
+        
+        //Caracteristicas de la ventana
+        setSize (900,600);
+        setTitle("Información Binario - Decimal");
+        
+        //Logo y Firma
+        ImageIcon iIcon = new ImageIcon(getClass().getResource("/vista/logo1_1.png"));
+        JLabel lbimagen = new JLabel(iIcon, JLabel.CENTER);
+        lbimagen.setBounds(90,510,70,50);
+        add(lbimagen);
+        
+        ImageIcon iFirma = new ImageIcon(getClass().getResource("/vista/FirmaP1.png"));
+        lbimagen = new JLabel(iFirma, JLabel.CENTER);
+        lbimagen.setBounds(20,510,60,60);
+        add(lbimagen);
+        
+        
+        JLabel Texto1 = new JLabel("Conversión entre binario y decimal.");
+        Texto1.setBounds(193,5,700,50);
+        add(Texto1); 
+        Texto1.setFont(new Font("Book Antiqua", Font.ITALIC, 35));
+        Texto1.setForeground(Color.BLACK);
+        
+        JLabel Texto2 = new JLabel("<html>Para realizar la conversión de binario a decimal, realice lo siguiente:<p> 1) Comience por el lado derecho del número en binario. Multiplique cada dígito por 2 elevado a la potencia consecutiva (comenzando por la potencia 0.20).<p><p>2) Después de realizar cada una de las multiplicaciones, súmelas todas y el número resultante será el equivalente al sistema decimal.<html>");
+        Texto2.setBounds(5,50,900,150);
+        add(Texto2); 
+        Texto2.setFont(new Font("Book Antiqua", Font.PLAIN, 18));
+        Texto2.setForeground(Color.BLACK);
+        
+        
+        JLabel Texto3 = new JLabel("Ejemplos: ");
+        Texto3.setBounds(5,170,900,110);
+        add(Texto3); 
+        Texto3.setFont(new Font("Book Antiqua", Font.BOLD, 18));
+        Texto3.setForeground(Color.BLACK);
+        
+        
+        //Ejemplo
+        ImageIcon imagen1 = new ImageIcon(getClass().getResource("/vista/ImagenBD.jpg"));
+        lbimagen = new JLabel(imagen1, JLabel.CENTER);
+        lbimagen.setBounds(5,230,900,200);
+        add(lbimagen);
+        
+        JLabel Texto4 = new JLabel("<html>(Los números ubicados en la parte superior del número binario indican la potencia a la que hay que elevar el número 2)<html>");
+        Texto4.setBounds(5,186,900,110);
+        add(Texto4); 
+        Texto4.setFont(new Font("Book Antiqua", Font.ITALIC, 18));
+        Texto4.setForeground(Color.BLACK);
+        
+        
+        JLabel Texto5 = new JLabel("<html>También se puede optar por utilizar los valores que presenta cada posición del número binario a ser transformado, comenzando de derecha a izquierda, y sumando los valores de las posiciones que tienen un 1.<html>");
+        Texto5.setBounds(5,400,900,110);
+        add(Texto5); 
+        Texto5.setFont(new Font("Book Antiqua", Font.PLAIN, 18));
+        Texto5.setForeground(Color.BLACK);
+        
+       
+        
+        //Agregamos fondo
+        iFondo = new ImageIcon(getClass().getResource("/vista/fondo_1.jpg"));
+        JLabel Fondo = new JLabel(iFondo, JLabel.CENTER);
+        Fondo.setBounds(0,0,900,600);
+        add(Fondo); 
+        
+    }
+    
+    
+}
+
