@@ -100,3 +100,6 @@ public class ConvertidorTextoBinario
     }
 }
 ```
+
+
+[MIT](https://choosealicense.com/licenses/mit/)
